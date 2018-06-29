@@ -14,6 +14,8 @@ from google.cloud import vision
 
 from wand.image import Image
 
+ALLOWED_EXTENSIONS = set(['pdf',])
+
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = os.path.abspath('./uploads')
 CORS(app)
@@ -42,6 +44,10 @@ class Translate(Resource):
 
 
 api.add_resource(Translate, '/translate')
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
 def ocr(imagepath):
@@ -136,6 +142,8 @@ class Upload(Resource):
     def post(self):
         pdf = request.files['file']
         file_id = str(uuid.uuid4())
+        if not allowed_file(pdf.filename):
+            return dict(file_id=-1, pages=-1)
 
         dirpath = os.path.join(app.config['UPLOAD_FOLDER'], file_id)
         os.makedirs(dirpath)
