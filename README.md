@@ -1,6 +1,6 @@
 # Awesome-PDF-for-students
 
-Extract and translate text from pdf in image format.
+Extract and translate text from SCANNED pdf.
 
 
 
@@ -30,7 +30,7 @@ This app uses Google cloud [VISION API](https://cloud.google.com/vision/) and [T
 
  You have to take steps 1 and 2 of the Before you begin >> [here](https://cloud.google.com/translate/docs/quickstart) <<
 
-**!Since the Google API is a paid service, you may incur costs!** 
+**! Since the Google API is a paid service, you may incur costs !** 
 
 
 
