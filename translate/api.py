@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Resource, Api
 from flask_restful import reqparse
-from translate import run_translate
+from .translate import run_translate
 
 app = Flask(__name__)
 api = Api(app)
@@ -31,6 +31,11 @@ class Translate(Resource):
             return {'error': str(e)}
 
 api.add_resource(Translate, '/translate')
+
+@app.route('/test')
+def test():
+    return render_template("test.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
