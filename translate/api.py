@@ -8,6 +8,7 @@ from multiprocessing import Pool
 from flask import Flask, render_template, request, url_for, send_file
 from flask_restful import Resource, Api
 from flask_restful import reqparse
+from flask_cors import CORS
 from .translate import run_translate
 from google.cloud import vision
 
@@ -15,6 +16,7 @@ from wand.image import Image
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = os.path.abspath('./uploads')
+CORS(app)
 api = Api(app)
 
 
