@@ -3,6 +3,8 @@ import uuid
 import PyPDF2
 import io
 
+from multiprocessing import Pool
+
 from flask import Flask, render_template, request, url_for, send_file
 from flask_restful import Resource, Api
 from flask_restful import reqparse
@@ -99,6 +101,32 @@ def convert_gcv_ocr_to_json(gvr_response):
     return paragraphs
 
 
+def process_ocr(args):
+    file_id, page, pdfpath = args
+    dirpath = os.path.join(app.config['UPLOAD_FOLDER'], file_id)
+    imgdir = os.path.join(dirpath, 'images')
+    imgpath = os.path.join(imgdir, "{}.jpg".format(page))
+    convert_to_img(pdfpath, page, imgpath)
+
+    ocr = ocr_image(imgpath)
+    return ocr
+
+def convert_to_img(pdfpath, page, imgpath):
+    pdfname = "{}[{}]".format(pdfpath, page)
+    print("convert page:", pdfname, imgpath)
+    with Image(filename=pdfname, resolution=100) as image:
+        image.format = 'jpeg'
+        image.compression_quality = 75
+        image.save(filename=imgpath)
+
+def ocr_image(imgpath):
+    response = ocr(imgpath)
+    ocrdata = convert_gcv_ocr_to_json(response)
+    return ocrdata
+
+pool = Pool(processes=4)
+
+
 class Upload(Resource):
     def post(self):
         pdf = request.files['file']
@@ -116,33 +144,22 @@ class Upload(Resource):
 
         print("page_count:", page_count)
 
-        imgpath = os.path.join(dirpath, 'images')
-        os.makedirs(imgpath)
+        imgdir = os.path.join(dirpath, 'images')
+        os.makedirs(imgdir)
 
-        for i in range(page_count):
-            print("convert page:", i)
-            name = "{}[{}]".format(pdfpath, i)
-            with Image(filename=name, resolution=100) as image:
-                image.format = 'jpeg'
-                image.compression_quality = 75
-                image.save(filename=os.path.join(imgpath, "{}.jpg".format(i)))
-
-        jsonpath = os.path.join(dirpath, 'json')
-        os.makedirs(jsonpath)
+        args = map(lambda i: (file_id, i, pdfpath), range(page_count))
+        ocrs = pool.map(process_ocr, args)
 
         pages = []
-        for i in range(page_count):
+        for idx, ocr in enumerate(ocrs):
             page = {}
-            pages.append(page)
-            print("ocr page:", i)
-            response = ocr(os.path.join(imgpath, "{}.jpg".format(i)))
-            ocrdata = convert_gcv_ocr_to_json(response)
-            page['ocr'] = ocrdata
+            page['ocr'] = ocr
             page['image'] = url_for(
-                    'doc',
-                    file_id=file_id,
-                    filename='{}.jpg'.format(i),
-                    _external=True)
+                'doc',
+                file_id=file_id,
+                filename='{}.jpg'.format(idx),
+                _external=True)
+            pages.append(page)
 
         return dict(file_id=file_id, pages=pages)
 
