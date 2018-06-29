@@ -30,7 +30,9 @@ class Translate(Resource):
         except Exception as e:
             return {'error': str(e)}
 
+
 api.add_resource(Translate, '/translate')
+
 
 @app.route('/test')
 def test():
