@@ -108,18 +108,24 @@ def process_ocr(args):
     dirpath = os.path.join(app.config['UPLOAD_FOLDER'], file_id)
     imgdir = os.path.join(dirpath, 'images')
     imgpath = os.path.join(imgdir, "{}.jpg".format(page))
-    convert_to_img(pdfpath, page, imgpath)
+    size = convert_to_img(pdfpath, page, imgpath)
 
     ocr = ocr_image(imgpath)
-    return ocr
+    return dict(ocr=ocr, size=size)
 
 def convert_to_img(pdfpath, page, imgpath):
     pdfname = "{}[{}]".format(pdfpath, page)
     print("convert page:", pdfname, imgpath)
+
+    result = dict()
     with Image(filename=pdfname, resolution=100) as image:
         image.format = 'jpeg'
         image.compression_quality = 75
+        result['width'] = image.width
+        result['height'] = image.height
         image.save(filename=imgpath)
+
+    return result
 
 def ocr_image(imgpath):
     response = ocr(imgpath)
@@ -154,8 +160,7 @@ class Upload(Resource):
 
         pages = []
         for idx, ocr in enumerate(ocrs):
-            page = {}
-            page['ocr'] = ocr
+            page = ocr
             page['image'] = url_for(
                 'doc',
                 file_id=file_id,
