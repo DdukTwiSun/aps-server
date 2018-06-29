@@ -33,4 +33,4 @@ def run_translate(text, target):
 
 
 if __name__ == '__main__':
-    run_quickstart(sys.argv[1], sys.argv[2])
+    run_translate(sys.argv[1], sys.argv[2])
