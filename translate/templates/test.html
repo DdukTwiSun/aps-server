@@ -6,8 +6,8 @@
     <title>Test</title>
   </head>
   <body>
-    <form action="/api/upload">
-      <input accept="application/pdf" type="file" data-url="/api/upload">
+    <form action="/upload" enctype="multipart/form-data" method="post">
+      <input id="file" name="file" accept="application/pdf" type="file">
       <input type="submit"/>
     </form>
   </body>
