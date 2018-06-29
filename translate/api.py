@@ -2,20 +2,19 @@ import os
 import uuid
 import PyPDF2
 import io
-import json
 
 from flask import Flask, render_template, request, url_for, send_file
 from flask_restful import Resource, Api
 from flask_restful import reqparse
 from .translate import run_translate
 from google.cloud import vision
-from google.protobuf.json_format import MessageToJson
 
 from wand.image import Image
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = os.path.abspath('./uploads')
 api = Api(app)
+
 
 class Translate(Resource):
     def post(self):
@@ -30,7 +29,7 @@ class Translate(Resource):
             _source = args['source']
             _target = args['target']
 
-            translated_text = run_translate(_text,_source,_target)
+            translated_text = run_translate(_text, _source, _target)
 
             return {'Text': args['text'],
                     'Source': args['source'],
@@ -65,11 +64,11 @@ def unmarshal_gcv_box(bounding_box):
     min_y = min(y_list)
     max_y = max(y_list)
 
-    width = max_x - min_x 
+    width = max_x - min_x
     height = max_y - min_y
 
     return dict(x=min_x, y=min_y, width=width, height=height)
- 
+
 
 def symbols_to_text(symbols):
     return "".join(map(lambda x: x.text, symbols))
@@ -98,7 +97,6 @@ def convert_gcv_ocr_to_json(gvr_response):
                 paragraphs.append(arrange_paragraph(par))
 
     return paragraphs
-
 
 
 class Upload(Resource):
@@ -131,7 +129,7 @@ class Upload(Resource):
 
         jsonpath = os.path.join(dirpath, 'json')
         os.makedirs(jsonpath)
-        
+
         pages = []
         for i in range(page_count):
             page = {}
@@ -152,15 +150,17 @@ class Upload(Resource):
 api.add_resource(Upload, '/upload')
 
 
-
 @app.route('/test')
 def test():
     return render_template("test.html")
 
+
 @app.route('/images/<file_id>/<filename>')
 def doc(file_id, filename):
-    path = os.path.join(app.config['UPLOAD_FOLDER'], file_id, 'images', filename)
+    path = os.path.join(
+            app.config['UPLOAD_FOLDER'], file_id, 'images', filename)
     return send_file(path)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
