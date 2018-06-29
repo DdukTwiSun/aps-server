@@ -11,13 +11,9 @@ Extract and translate text from pdf in image format.
 
 ## demo
 
-
+run http://35.189.128.116/test
 
 ## Installation
-
-## how_to_use
-
-## requirements
 
 ## license
 
