@@ -13,6 +13,8 @@ Extract and translate text from SCANNED pdf. :zap:
 
 ## Overview
 
+<img src="https://github.com/DdukTwiSun/server/blob/master/home_capture.PNG?raw=true" style="width:888;"/>
+
 ![INTRO](https://github.com/DdukTwiSun/server/blob/master/intro.jpg)
 
 
