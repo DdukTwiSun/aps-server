@@ -26,7 +26,7 @@ Before Installation,
 
 This app uses Google cloud [VISION API](https://cloud.google.com/vision/) and [TRANSLATION API](https://cloud.google.com/translate).
 
- You have to take steps 1 and 2 of the Before you begin >> [here](https://cloud.google.com/translate/docs/quickstart) <<
+ You have to take steps 1 and 2 of the Before you begin :point_right: [here](https://cloud.google.com/translate/docs/quickstart)
 
 **! Since the Google API is a paid service, you may incur costs !** 
 
