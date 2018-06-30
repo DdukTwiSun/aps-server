@@ -7,14 +7,14 @@ Extract and translate text from SCANNED pdf. :zap:
 
 *****
 
-1. [demo](#demo)
+1. [Demo](#demo)
 2. [Installation](#installation)
-3. [license](#license)
+3. [License](#license)
 *****
 
 
 
-## demo
+## Demo
 
 run http://openhack.make.codes/test
 
@@ -45,7 +45,7 @@ this app uses The Google Cloud [VISION API](https://cloud.google.com/vision/) an
 > flask run
 ```
 
-## license
+## License
 
 * [MIT License](LICENSE)
 
