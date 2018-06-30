@@ -2,6 +2,7 @@
 
 Extract and translate text from SCANNED pdf.
 
+![INTRO](https://github.com/DdukTwiSun/server/blob/master/intro.jpg)
 
 
 *****
