@@ -1,6 +1,17 @@
-# Awesome-PDF-for-students
+<div align="middle">
+<img src="https://github.com/DdukTwiSun/server/blob/master/logo.jpg" height="250px" >
+</div>
+
+<h1 align="center">Awesome-PDF-for-students</h1>
+
+<p align="center">
+	<a href="https://sigoss.github.io/hackathon2018/"><img src="https://img.shields.io/badge/OpenHack-3th-blue.svg"></a>
+	<a href="https://github.com/OpenHackPomodoro/pomodoro/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>	
+</p>
 
 Extract and translate text from SCANNED pdf. :zap:
+
+## Overview
 
 ![INTRO](https://github.com/DdukTwiSun/server/blob/master/intro.jpg)
 
