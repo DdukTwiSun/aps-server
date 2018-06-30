@@ -7,12 +7,9 @@ Extract and translate text from SCANNED pdf.
 
 *****
 
-
-
 1. [demo](#demo)
-2. [Installation](#Installation)
+2. [Installation](#installation)
 3. [license](#license)
-
 *****
 
 
