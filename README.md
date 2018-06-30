@@ -1,6 +1,6 @@
 # Awesome-PDF-for-students
 
-Extract and translate text from SCANNED pdf.
+Extract and translate text from SCANNED pdf. :zap:
 
 ![INTRO](https://github.com/DdukTwiSun/server/blob/master/intro.jpg)
 
@@ -22,13 +22,14 @@ run http://openhack.make.codes/test
 
 ## Installation
 
-Before Installation,
+Before installation,
 
-This app uses Google cloud [VISION API](https://cloud.google.com/vision/) and [TRANSLATION API](https://cloud.google.com/translate).
+this app uses The Google Cloud [VISION API](https://cloud.google.com/vision/) and [TRANSLATION API](https://cloud.google.com/translate), so you should take the following steps.
+ 
+ Take steps 1 and 2 in the "before you begin" section :point_right: [here](https://cloud.google.com/translate/docs/quickstart).
+  
 
- You have to take steps 1 and 2 of the Before you begin :point_right: [here](https://cloud.google.com/translate/docs/quickstart)
-
-**! Since the Google API is a paid service, you may incur costs !** 
+:warning: **Since the Google API is a paid service, you may incur costs**
 
 
 
