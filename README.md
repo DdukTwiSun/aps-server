@@ -42,20 +42,60 @@ this app uses The Google Cloud [VISION API](https://cloud.google.com/vision/) an
  Take steps 1 and 2 in the "before you begin" section :point_right: [here](https://cloud.google.com/translate/docs/quickstart).
   
 
-:warning: **Since the Google API is a paid service, you may incur costs**
+:warning: **Since the Google API is a paid service, you may incur costs.**
 
 
+
+The following procedure is based on ubuntu linux, and may differ depending on your operating system.
 
 ```bash
-# set up a virtual environment
+
+# git clone server repository.
+> git clone https://github.com/DdukTwiSun/server
+
+# install python3 & venv.
+> sudo apt-get install python3 python3-venv
+
+# set up a virtual environment.
 > python3 -m venv myvenv
 > source myvenv/bin/activate
 
-# install all requirement packages
-> pip3 install -r requirements.txt
+# install all requirement packages.
+> pip install -r requirements.txt
 
-# run server
+# upgrade the client library.
+pip install --upgrade google-cloud-vision
+
+# 1) run server on your local system.
 > flask run
+# If the flask is running successful, try connecting to http://127.0.0.1:5000/test and doing test.
+
+
+# 2) run server on cloud server at port 80.
+> sudo FLASK_APP=server/api.py myvenv/bin/python3 -m flask run --host=0.0.0.0 --port=80
+# If the flask is running successful, try connecting to http://yourserver:80/test and doing test.
+
+```
+
+If your server is ready, start the client.
+You need to install node.js & npm.
+
+```bash
+
+# git clone Client repository.
+> git clone https://github.com/DdukTwiSun/Client
+
+ # install dependency for client.
+ > npm install
+
+ # Modify the code for your server.
+ # base.js   line 33) const translateApiUrl = http://yourserver/translate/
+ # home.html line 11) data-url="http://yourserver/upload"/>
+
+# start your client and run your example.
+> npm start 
+
+# try connecting to http://yourserver:8080/home.html and upload your PDF.
 ```
 
 ## License

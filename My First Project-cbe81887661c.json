@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "supple-voyage-208614",
+  "private_key_id": "cbe81887661cc19b40ed4492add777f2243280b5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCs2Il4huUJ/py5\nadjvu0pjoxI5XchH4gpxzvIxJ76vS+EVgx5D3hvhf1VB0xquiZ/E4fULdwD29yed\n31H+i7WqKcMXwWFxXcpHg7CHgfkBZkPrNXc7uA8sLgSC4VmV5rlBPHmieQi4L0Ey\nSf2SgGsdFX8HHOkwrdrwtP7eJma0MQWecNcxzgmciNy2bcewoxTzEZW/XmYVYyU0\nIvFa6AdD+ZlHTnEft2hp19EPlkyXkuLHUqeLtXPN5MALCe8enaHMyDLsdLAwOMIw\nbTHixXeihTOtBSFQNQlt7Wbq9w5jl8UVWk79F/pzrVsK7bNRN9ovRmbLUZWp4tp5\nEj/27VxvAgMBAAECggEAGv+z8YS4sCf6WSgEf+X0h73IMffJOhk/4mkeAbmgmocy\nwIZ7qsQ9/KpEKgUMrOjIcRuOiFztZKZUpN9mUmmGVe8yDzrgurGY0DTs1S3jNGnC\nADKYzlZA4HjLsZn7wWOJ2nvU0CEx0HtpJq7SEhlHIgLilbzZXAY8Jc9P5GmBL3Ia\n9lm9QApqJeiBPIuqULsYox5B7KS26Q1l14O3nL0yJQ97wSgRV9t7lUyklKmC4RHU\n7dwPV4iLwosMo1LjDOJdKf5xfk+oY9Gpg7ROAboDKZ+OHlbj7qcPN4OGI5VmEDU8\nuJ6EoaAop85Ke/8tAZSregpJ9O5dc6RogQjZ6Vi6uQKBgQDiec9AD/3aZeuh5l/d\noGtia56VPilyzChaqE/BSH0ypACXiMSbMj1diHHA4rSeDG/XyXpCSTqabZV4OA9H\nhOp7nJlUy8CkPGrJhmVIhNQ8ymkattFAVDGPiY4hxVlihgd+YlIcgkk2XFBRPORW\nJu0BuNnx8B9OBcR5ySc5CTY1vQKBgQDDYO5sQAFk5V/CE3n/3B30pKKqNPfxkP4z\neqfsA/4tOC0zpJXToPvRy0/CeE0mVs3EmoqeIvLNS6ImeuPjf6glDc7NZ2uVOwyU\n02XFdKYCtjtc9ZPGcCXW5636En8yPVvwBwz3okZE2tjXogg9D9e8QvblqKYHeNwH\nkzNmTTPPmwKBgG/zXquAPDAVaaEiTAk2H18La9zCWaLRoLEPuj0FJD5AK7q8dNNy\nxjrSE8kRR89IvpCgm7rgkAN+YACJVaQ44+AuzOzJu3R0GSV9NdvfLTrPo5z8+fse\no1Ec4hF3iHPXZSToXUaScLZac6l0vDqKC2ZqhfG+jPr4huLcuHLNRurRAoGADKuK\niqaT8JEXZqSQstD5eFX83oDU22uFsJzxqtKPdys/cyvnM3QrIG3I3Fmk1yml6mwD\nNUIa8MlI2Kn7gVNT+iMtGBDu3xyXMkeLQATShzZ+Hwcl8CZxrcAUfjUY3o8wGR67\n7ostd2WhzkoJsrwGR4UoMbiAG9fwnOUk3it/gqUCgYEAlwFBcQ89oiw2yy58XpDv\nO1sJ8cKt4eJzz3M6RG3vJ0uSGK3aor8pyqOULnEqRetN9CCn+5PJyIwTYp5PQR9s\n4Oc/fENZrzqQSwUEpBBjYYTyMhXsOZHAvhNeiUXCEHMTeuL1owo+iFtN5mI3zESv\n+rDfhFgRLZax4zkk7GOiWxE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "starting-account-nyd0g9tgiygm@supple-voyage-208614.iam.gserviceaccount.com",
+  "client_id": "101905472010796894578",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-nyd0g9tgiygm%40supple-voyage-208614.iam.gserviceaccount.com"
+}

@@ -15,7 +15,7 @@
 import sys
 
 def run_translate(text, target):
-    # [START translate_quickstart]
+    # [START run_translate]
     # Imports the Google Cloud client library
     from google.cloud import translate
 
@@ -29,7 +29,7 @@ def run_translate(text, target):
 
     # Return the Translated_Text
     return translation['translatedText']
-    # [END translate_quickstart]
+    # [END run_translate]
 
 
 if __name__ == '__main__':
